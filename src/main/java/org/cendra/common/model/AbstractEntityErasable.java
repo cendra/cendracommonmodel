@@ -11,10 +11,12 @@ public abstract class AbstractEntityErasable extends EntityId implements
 	private Boolean erased;
 
 	public Boolean getErased() {
+		erased = this.nullIsFalse(erased);
 		return erased;
 	}
 
 	public void setErased(Boolean erased) {
+		erased = this.nullIsFalse(erased);
 		this.erased = erased;
 	}
 

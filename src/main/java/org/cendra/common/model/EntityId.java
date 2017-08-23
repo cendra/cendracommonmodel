@@ -1,8 +1,6 @@
 package org.cendra.common.model;
 
-import java.io.Serializable;
-
-public class EntityId extends Entity implements Identifiable, Serializable {
+public class EntityId extends Entity implements Identifiable {
 
 	/**
 	 * 
@@ -17,7 +15,7 @@ public class EntityId extends Entity implements Identifiable, Serializable {
 	}
 
 	public void setId(String id) {
-
+		id = this.formatValue(id);
 		this.id = id;
 	}
 
@@ -76,18 +74,6 @@ public class EntityId extends Entity implements Identifiable, Serializable {
 		}
 
 		return "";
-	}
-
-	protected String formatValue(String value) {
-		if (value != null) {
-			value = value.trim();
-		}
-
-		if (value != null && value.isEmpty()) {
-			value = null;
-		}
-
-		return value;
 	}
 
 }
