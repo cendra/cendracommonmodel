@@ -2,8 +2,8 @@ package org.cendra.common.model.geo;
 
 import org.cendra.common.model.EntityId;
 
-public class Languaje extends EntityId implements Cloneable,
-		Comparable<Languaje> {
+public class Language extends EntityId implements Cloneable,
+		Comparable<Language> {
 
 	/**
 	 * 
@@ -71,8 +71,8 @@ public class Languaje extends EntityId implements Cloneable,
 		this.languageName = languageName;
 	}
 
-	public Languaje clone() throws CloneNotSupportedException {
-		Languaje other = (Languaje) super.clone();
+	public Language clone() throws CloneNotSupportedException {
+		Language other = (Language) super.clone();
 
 		other.setMacrolanguage(this.getMacrolanguage());
 		other.setIso639_3(this.getIso639_3());
@@ -83,17 +83,17 @@ public class Languaje extends EntityId implements Cloneable,
 		return other;
 	}
 
-	public int compareTo(Languaje o) {
+	public int compareTo(Language o) {
 
 		if (this.getIso639_3() != null && o != null) {
-			return this.getIso639_3().compareTo(((Languaje) o).getIso639_3());
+			return this.getIso639_3().compareTo(((Language) o).getIso639_3());
 		}
 
 		if (this.getIso639_3() != null && o == null) {
 			return this.getIso639_3().compareTo("");
 		}
 
-		return "".compareTo(((Languaje) o).getIso639_3());
+		return "".compareTo(((Language) o).getIso639_3());
 	}
 
 	@Override

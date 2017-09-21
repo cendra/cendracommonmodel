@@ -94,6 +94,7 @@ public class Continent extends EntityId implements Cloneable,
 	@SuppressWarnings("unchecked")
 	public void addAbbreviation(String abbreviation) {
 		abbreviations = formatValues(abbreviations);
+		abbreviation = this.formatValue(abbreviation);
 		this.abbreviations.add(abbreviation);
 	}
 

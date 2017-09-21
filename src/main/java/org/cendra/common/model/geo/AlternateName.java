@@ -15,7 +15,7 @@ public class AlternateName extends AbstractEntityErasable implements Cloneable,
 	private Boolean shortName;
 	private Boolean colloquial;
 	private Boolean historic;
-	private Languaje languaje;
+	private Language language;
 
 	public String getAlternateName() {
 		alternateName = this.formatValue(alternateName);
@@ -67,12 +67,12 @@ public class AlternateName extends AbstractEntityErasable implements Cloneable,
 		this.historic = historic;
 	}
 
-	public Languaje getLanguaje() {
-		return languaje;
+	public Language getLanguaje() {
+		return language;
 	}
 
-	public void setLanguaje(Languaje languaje) {
-		this.languaje = languaje;
+	public void setLanguaje(Language languaje) {
+		this.language = languaje;
 	}
 
 	public AlternateName clone() throws CloneNotSupportedException {
