@@ -30,6 +30,14 @@ public class Entity implements Serializable {
 
 		return value;
 	}
+	
+	protected Double nullIsZero(Double value) {
+		if (value == null) {
+			value = 0.0;
+		}
+
+		return value;
+	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	protected List formatValues(List values) {

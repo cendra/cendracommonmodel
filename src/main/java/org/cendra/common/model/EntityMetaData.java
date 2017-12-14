@@ -94,4 +94,34 @@ public class EntityMetaData {
 		return r;
 	}
 
+	public String[] getAttLabels() {
+		List<String> values = new ArrayList<String>();
+		for (EntityAttMetaData attMD : atts) {
+			values.add(attMD.getLabel());
+		}
+		String[] r = new String[values.size()];
+		r = values.toArray(r);
+
+		return r;
+	}
+
+	public String getAttShortLabelByAttName(String attName) {
+		for (EntityAttMetaData attMD : atts) {
+			if (attMD.getName().equals(attName)) {
+				return attMD.getLabelShort();
+			}
+		}
+		return null;
+	}
+	
+	public String getAttLabelByAttName(String attName) {
+		for (EntityAttMetaData attMD : atts) {
+			if (attMD.getName().equals(attName)) {
+				return attMD.getLabel();
+			}
+		}
+		return null;
+		
+	}
+
 }
