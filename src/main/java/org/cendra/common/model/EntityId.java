@@ -10,7 +10,10 @@ public class EntityId extends Entity implements Identifiable {
 	private String id;
 
 	public String getId() {
-
+		// if(this.id == null){
+		// throw new IllegalArgumentException(this.getClass().getCanonicalName()
+		// + ".id is null.");
+		// }
 		return id;
 	}
 
@@ -74,6 +77,16 @@ public class EntityId extends Entity implements Identifiable {
 		}
 
 		return "";
+	}
+
+	public boolean validate() throws IllegalArgumentException {
+
+		if (this.id == null || this.id.isEmpty()) {
+			throw new IllegalArgumentException(this.getClass()
+					.getCanonicalName() + ".id is null.");
+		}
+
+		return true;
 	}
 
 }
