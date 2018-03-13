@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Entity implements Serializable {
+public class Entity implements Serializable, Valuable {
 
 	/**
 	 * 
@@ -30,7 +30,7 @@ public class Entity implements Serializable {
 
 		return value;
 	}
-	
+
 	protected Double nullIsZero(Double value) {
 		if (value == null) {
 			value = 0.0;
@@ -53,6 +53,17 @@ public class Entity implements Serializable {
 		}
 
 		return r;
+	}
+
+	@Override
+	public String toString() {
+		return "Entity [toString()=" + super.toString() + "]";
+	}
+
+	@Override
+	public boolean validate() throws IllegalArgumentException {
+		
+		return true;
 	}
 
 }
